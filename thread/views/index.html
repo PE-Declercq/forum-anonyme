@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum Anonyme - Threads</title>
+</head>
+<body>
+    <h1>Forum Anonyme</h1>
+    <div id="messages">
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            fetch('http://localhost:3000/messages')
+                .then(response => response.json())
+                .then(messages => {
+                    const messagesContainer = document.getElementById('messages');
+                    messages.forEach(message => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.textContent = `${message.pseudonym}: ${message.text}`;
+                        messagesContainer.appendChild(messageDiv);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

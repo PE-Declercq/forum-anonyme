@@ -6,6 +6,8 @@ services:
       - db
     networks:
       - backend
+    context: ./api
+    dockerfile: Dockerfile
 
   db:
     image: mysql:5.7
@@ -27,6 +29,8 @@ services:
       - "80:80"
     networks:
       - backend
+    context: ./thread
+    dockerfile: Dockerfile
 
   sender:
     build: ./sender
@@ -36,6 +40,8 @@ services:
       - "8080:8080"
     networks:
       - backend
+    context: ./sender
+    dockerfile: Dockerfile
 
 networks:
   backend:

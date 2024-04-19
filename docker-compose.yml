@@ -30,6 +30,8 @@ services:
         condition: service_healthy
     networks:
       - backend
+    ports:
+      - "3000:3000"
 
   thread:
     build:

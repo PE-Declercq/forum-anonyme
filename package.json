@@ -10,7 +10,7 @@
     "commit": "cz",
     "lint": "eslint api/ thread/ sender/",
     "test": "mocha test/**/*.js",
-    "build": "docker build -t mon-app-api ."
+    "build": "docker-compose build"
   },
   "repository": {
     "type": "git",

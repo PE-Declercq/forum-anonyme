@@ -8,7 +8,7 @@
     "start-thread": "node thread/thread.js",
     "start-sender": "node sender/sender.js",
     "commit": "cz",
-    "lint": "eslint .",
+    "lint": "eslint api/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-api": "mocha api/test",
     "test-thread": "mocha thread/test",

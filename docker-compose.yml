@@ -11,6 +11,7 @@ services:
 
   db:
     image: mysql:5.7
+    platform: linux/amd64
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: forum
@@ -48,3 +49,4 @@ networks:
 
 volumes:
   dbdata:
+    driver: local

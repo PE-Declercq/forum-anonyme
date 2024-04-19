@@ -9,7 +9,8 @@
     "start-sender": "node sender/sender.js",
     "commit": "cz",
     "lint": "eslint api/ thread/ sender/",
-    "test": "mocha test/**/*.js"
+    "test": "mocha test/**/*.js",
+    "build": "docker build -t mon-app-api ."
   },
   "repository": {
     "type": "git",

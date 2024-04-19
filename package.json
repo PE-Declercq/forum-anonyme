@@ -9,9 +9,7 @@
     "start-sender": "node sender/sender.js",
     "commit": "cz",
     "lint": "eslint api/ thread/ sender/",
-    "test-api": "mocha api/test",
-    "test-thread": "mocha thread/test",
-    "test-sender": "mocha sender/test"
+    "test": "mocha test/**/*.js"
   },
   "repository": {
     "type": "git",

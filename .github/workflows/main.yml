@@ -22,7 +22,7 @@ jobs:
       - name: Run linter
         run: npm run lint
       - name: Run tests
-        run: npm test-api
+        run: npm test
       #- name: Build
       #  run: npm run build
       #- name: Deploy

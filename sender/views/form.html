@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum Anonyme - Send a Message</title>
+</head>
+<body>
+    <h1>Envoyer un message anonyme</h1>
+    <form id="messageForm">
+        <input type="text" id="pseudonym" placeholder="Votre pseudonyme" required>
+        <textarea id="text" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const pseudonym = document.getElementById('pseudonym').value;
+            const text = document.getElementById('text').value;
+
+            fetch('http://localhost:3000/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ pseudonym, text }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -9,9 +9,6 @@
     "start-sender": "node sender/sender.js",
     "commit": "cz",
     "lint": "eslint api/ thread/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test-api": "mocha api/test",
-    "test-thread": "mocha thread/test",
     "test-sender": "mocha sender/test"
   },
   "repository": {

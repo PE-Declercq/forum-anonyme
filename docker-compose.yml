@@ -1,18 +1,18 @@
 version: '3.8'
 services:
   api:
-    build: ./api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
     depends_on:
       - db
     networks:
       - backend
-    context: ./api
-    dockerfile: Dockerfile
 
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: forum
       MYSQL_USER: user
       MYSQL_PASSWORD: password
@@ -22,26 +22,26 @@ services:
       - backend
 
   thread:
-    build: ./thread
+    build:
+      context: ./thread
+      dockerfile: Dockerfile
     depends_on:
       - api
     ports:
       - "80:80"
     networks:
       - backend
-    context: ./thread
-    dockerfile: Dockerfile
 
   sender:
-    build: ./sender
+    build:
+      context: ./sender
+      dockerfile: Dockerfile
     depends_on:
       - api
     ports:
       - "8080:8080"
     networks:
       - backend
-    context: ./sender
-    dockerfile: Dockerfile
 
 networks:
   backend:

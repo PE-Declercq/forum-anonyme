@@ -23,7 +23,7 @@ jobs:
         run: npm run lint
       #- name: Run tests
       #  run: npm test
-      - name: Build
-        run: npm run build
+      - name: Build the Docker image
+        run: docker-compose build
       #- name: Deploy
       #  run: some_deploy_command
